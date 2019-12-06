@@ -2,12 +2,27 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <style>
+            .error {
+                color: purple;
+            }
+        </style>
     </head>
-<body>
+        <body>
+            <h1>Build A Blog</h1>
+
+           <nav>
+               <a href="/newpost">New Post Page</a>
+               <a href="/blog">Main Page</a>
+           </nav>
+
+           <hr />
+
+      
 
     {% block content %}
     {% endblock %}
 
     
-</body>
+        </body>
 </html>

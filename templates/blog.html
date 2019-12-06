@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Build a Blog</title>
-   </head>
-   <body>
-      <h1>Build a Blog</h1>
+{% extends 'base.html' %}
+{% block content %}
       
-      <a href="/newpost">New Post Page</a>
-      <a href="/blog">Main Page</a>
-   </body>
-</html>
+<h1>Blog Post</h1>
+<ul>
+   {% for blog in blogs %}
+   <li>
+      <h2>
+         <a href ='./blog?id={{blog.id}}'>{{ blog.title }}</a>
+      </h2>
+         <p>{{ blog.body }}</p>
+         <hr />
+   </li>
+   {% endfor %}
+</ul>
+      
+{% endblock %} 
