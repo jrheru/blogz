@@ -2,16 +2,16 @@
 {% block content %}
       
 <h1>Blog Post</h1>
-<ul>
-   {% for blog in blogs %}
-   <li>
+
+   {% for post in posts %}
+   
       <h2>
-         <a href ='./blog?id={{blog.id}}'>{{ blog.title }}</a>
+         <a href ='./blog?id={{post.id}}'>{{ post.title }}</a>
       </h2>
-         <p>{{ blog.body }}</p>
+         <p>{{ post.body }}</p>
+         <p><small>written by <a href="/blog?user={{post.owner_id}}">{{post.owner.username}}</a></small></p>
          <hr />
-   </li>
-   {% endfor %}
-</ul>
+    {% endfor %}
+
       
 {% endblock %} 

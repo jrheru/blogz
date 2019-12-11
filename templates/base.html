@@ -8,21 +8,31 @@
             }
         </style>
     </head>
-        <body>
-            <h1>Build A Blog</h1>
-
-           <nav>
-               <a href="/newpost">New Post Page</a>
-               <a href="/blog">Main Page</a>
-           </nav>
-
-           <hr />
-
-      
+<body>
+       <div>
+           <a href='/newpost'>New Post</a>
+       </div>
+       <div>
+           <a href="/">Home</a>
+       </div>
+       <div>
+           <a href='/login'>Login</a>
+       </div>
+       <div>
+           <a href='/logout'>Logout</a>
+       </div> 
+       
+       {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category,message in messages %}
+            <li class="{{category}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+    {% endwith %}
 
     {% block content %}
     {% endblock %}
-
-    
-        </body>
+               
+   
+</body>
 </html>
